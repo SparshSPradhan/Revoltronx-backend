@@ -1,9 +1,15 @@
 {
-    "projects": [
+    "version": 2,
+    "builds": [
       {
-        "src": "backend/",
-        "buildCommand": "npm run build",
-        "outputDirectory": "backend/dist"
+        "src": "src/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/src/server.js"
       }
     ]
   }
